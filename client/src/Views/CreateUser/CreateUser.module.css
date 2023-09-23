@@ -1,0 +1,47 @@
+.cont{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.formCont{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: #fea8bd;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 270px;
+}
+.inputCont{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+.inputCont input{
+    height: 40px;
+    width: 100%;
+}
+.inputCont label{
+    font-weight: 600;
+}
+
+.error{
+    position: absolute;
+    bottom: -25px;
+}

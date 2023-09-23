@@ -1,0 +1,32 @@
+.homeCont{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+.cardsCont{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.buttonCont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.buttonCont .button{
+    background-color: #fea8bd;
+    border: #fea8bd;
+    padding: 10px;
+}
+.buttonCont .button:hover {
+    background-color: #f6c9d4;
+}
+.buttonCont .button .active {
+    background-color: #f89bb2;
+}
