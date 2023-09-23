@@ -50,7 +50,7 @@ const CreateUser = () => {
       !errors.password &&
       !errors.confirmpassword
     ) {
-      await axios.post("https://pf-back-production-b670.up.railway.app/user/create", form)
+      await axios.post("/user/create", form)
       .then((response) => {
         if (response) {
           Navigate("/login");

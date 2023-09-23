@@ -48,7 +48,7 @@ export const POST_SHOP = "POST_SHOP";
 //******** Get all products **********/
 export function getAllProducts() {
   return (dispatch) => {
-    axios.get("https://pf-back-production-b670.up.railway.app/products").then((response) => {
+    axios.get("/products").then((response) => {
       dispatch({
         type: GET_ALL_PRODUCTS,
         payload: response.data,
@@ -60,7 +60,7 @@ export function getAllProducts() {
 //******** Get products by id **********/
 export function getProductsById(id) {
   return (dispatch) => {
-    axios.get(`https://pf-back-production-b670.up.railway.app/products/${id}`).then((response) => {
+    axios.get(`/products/${id}`).then((response) => {
       dispatch({
         type: GET_PRODUCT_BY_ID,
         payload: response.data,
@@ -74,7 +74,7 @@ export function searchProducts(search){
   return async function (dispatch)
 {
   try{
-    var json = await axios.get("https://pf-back-production-b670.up.railway.app/products?name=" + search);
+    var json = await axios.get("/products?name=" + search);
     return dispatch({
       type: SEARCH_PRODUCTS,
       payload: json.data
@@ -99,7 +99,7 @@ export function orderProducts(value){
 
 export function getDessert(){
     return (dispatch) => {
-      axios.get("https://pf-back-production-b670.up.railway.app/desserts")
+      axios.get("/desserts")
         .then((response) => { dispatch({ type: GET_DESSERT, payload: response.data }) })
         
     }
@@ -110,14 +110,14 @@ export function getDessert(){
 export function changeDetails(payload,id) {
   return async function () {
     console.log(payload)
-    return await axios.put(`https://pf-back-production-b670.up.railway.app/products/${id}`, payload);
+    return await axios.put(`/products/${id}`, payload);
   }
 }
 
 export const postDessert = (form) => {
   return async (dispatch) => {
     try {
-      let response = await axios.post("https://pf-back-production-b670.up.railway.app/products", form);
+      let response = await axios.post("/products", form);
       let formData = await response.data;
       if (formData.length > 0) {
         dispatch({
@@ -151,7 +151,7 @@ export const filterProducts = (filter) => {
 export const addToCart = (id, userId) => {
   return async (dispatch) => {
       const response = await axios.post(
-        `https://pf-back-production-b670.up.railway.app/carts/${userId}/${id}`
+        `/carts/${userId}/${id}`
       );
       dispatch({ type: ADD_TO_CART_SUCCESS});
   };
@@ -160,7 +160,7 @@ export const addToCart = (id, userId) => {
 export function getCart(userId) {
          return async (dispatch) => {
            await axios
-             .get(`https://pf-back-production-b670.up.railway.app/carts/${userId}`)
+             .get(`/carts/${userId}`)
              .then((response) => {
               console.log(response.data)
                if (response.data) {
@@ -177,7 +177,7 @@ export function getCart(userId) {
 export const removeFromCart = (id, userId) => {
   return async (dispatch) => {
     const response = await axios.delete(
-      `https://pf-back-production-b670.up.railway.app/carts/${userId}/${id}`
+      `/carts/${userId}/${id}`
     );
     dispatch({ type: REMOVE_FROM_CART,
       payload: id });
@@ -190,7 +190,7 @@ export const increaseQuantity = (itemId, userId, quantity) => {
   return async (dispatch) => {
     try {
        await axios.post(
-        `https://pf-back-production-b670.up.railway.app/carts/${userId}/${itemId}`,
+        `/carts/${userId}/${itemId}`,
         { "quantity": quantity }
       );
       dispatch({ type: "INCREASE_QUANTITY_SUCCESS",
@@ -206,7 +206,7 @@ export const decreaseQuantity = (itemId, userId, quantity) => {
   return async (dispatch) => {
     try {
        await axios.post(
-        `https://pf-back-production-b670.up.railway.app/carts/${userId}/${itemId}`,
+        `/carts/${userId}/${itemId}`,
         { "quantity": quantity }
       );
       dispatch({ type: DECREASE_QUANTITY,
@@ -223,7 +223,7 @@ export const decreaseQuantity = (itemId, userId, quantity) => {
 //******** Get all reviews **********/
 export function getAllReviews() {
   return async (dispatch) => {
-    await axios.get("https://pf-back-production-b670.up.railway.app/review").then((response) => {
+    await axios.get("/review").then((response) => {
       if (response) {
         dispatch({
           type: GET_ALL_REVIEWS,
@@ -238,7 +238,7 @@ export const emptyCart = (userId) => {
   return async (dispatch) => {
     try {
       const response = await axios.delete(
-        `https://pf-back-production-b670.up.railway.app/carts/reset/${userId}/user`
+        `/carts/reset/${userId}/user`
       );
       // Despachar acción después de la eliminación exitosa del carrito
       dispatch({ type: "EMPTY_CART_SUCCESS" });
@@ -254,7 +254,7 @@ export const emptyCart = (userId) => {
 export function getUserData(token, id) {
   return async (dispatch) => {
     if (token && id) {
-      await axios.get(`https://pf-back-production-b670.up.railway.app/user/${id}`)
+      await axios.get(`/user/${id}`)
         .then((response) => {
           dispatch({
             type: GET_USER_DATA,
@@ -269,7 +269,7 @@ export function getUserAdress(storedToken, id) {
          return async (dispatch) => {
            if (storedToken) {
              await axios
-               .get(`https://pf-back-production-b670.up.railway.app/Address/${id}`)
+               .get(`/Address/${id}`)
                .then((response) => {                 
                  dispatch({
                    type: GET_USER_ADDRESS,
@@ -287,7 +287,7 @@ export function getUserAdress(storedToken, id) {
 export function getShops(idUser) {
          return async (dispatch) => {
            await axios
-             .get(`https://pf-back-production-b670.up.railway.app/shops/${idUser}`)
+             .get(`/shops/${idUser}`)
              .then((response) => {
                dispatch({
                  type: GET_USER_SHOP,
@@ -300,7 +300,7 @@ export const postShop = (id, userId, cantidad, price) => {
   return async (dispatch) => {
     const total = price * cantidad
     const response = await axios.post(
-      `https://pf-back-production-b670.up.railway.app/shops/${userId}/${id}/${cantidad}/${total}`
+      `/shops/${userId}/${id}/${cantidad}/${total}`
     );
     dispatch({ type: POST_SHOP });
   };

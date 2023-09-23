@@ -20,7 +20,7 @@ console.log(addressId)
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (addressId) {
-      await axios.put(`https://pf-back-production-b670.up.railway.app/Address/modify/${addressId}`, form)
+      await axios.put(`/Address/modify/${addressId}`, form)
         .then((response) => {
           if (response) {
           setVisible(false)

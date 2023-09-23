@@ -74,7 +74,7 @@ const CamPassword = () => {
     const handleSubmit = async (e) => { 
         try {
             e.preventDefault();
-            await axios.put('https://pf-back-production-b670.up.railway.app/user/forgotPass',  password ).then((response) => { 
+            await axios.put('/user/forgotPass',  password ).then((response) => { 
              const mensaje = response.data.message 
              Swal.fire({
               title: mensaje,

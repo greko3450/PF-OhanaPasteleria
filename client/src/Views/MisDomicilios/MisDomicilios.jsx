@@ -55,7 +55,7 @@ const MisDomicilios = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         await axios.delete(
-          `https://pf-back-production-b670.up.railway.app/Address/remove/${id}/${idAddress}`
+          `/Address/remove/${id}/${idAddress}`
         );
         window.location.reload(true);
       }

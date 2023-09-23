@@ -87,7 +87,7 @@ console.log(!!storedToken);
 
   useEffect(() => {
     const searchFav = async () => {
-      await axios.get(`https://pf-back-production-b670.up.railway.app/favoritos/user/${userId}/products`).then((response) => {
+      await axios.get(`/favoritos/user/${userId}/products`).then((response) => {
         response.data.map((fav) => {
           if (fav.id === parseInt(id)) {
             setisFav(true);
@@ -102,10 +102,10 @@ console.log(!!storedToken);
   }, []);
 
   const addFavorite = async () => {
-    await axios.post(`https://pf-back-production-b670.up.railway.app/favoritos/user/${userId}/product/${id}`);
+    await axios.post(`/favoritos/user/${userId}/product/${id}`);
   };
   const deleteFavorite = async () => {
-      await axios.delete(`https://pf-back-production-b670.up.railway.app/favoritos/user/${userId}/product/${id}`);
+      await axios.delete(`/favoritos/user/${userId}/product/${id}`);
       if (window.location.pathname === "/favoritos") {
         window.location.replace(window.location.href);
       }
@@ -168,7 +168,7 @@ console.log(!!storedToken);
     }).then(async (result) => {
       if (result.isConfirmed) {
         await axios
-          .delete(`https://pf-back-production-b670.up.railway.app/products/${myProduct.id}`)
+          .delete(`/products/${myProduct.id}`)
           .then(
             navigate("/Products"),
             setTimeout(() => {

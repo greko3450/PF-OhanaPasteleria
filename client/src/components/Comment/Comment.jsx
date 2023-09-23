@@ -34,13 +34,13 @@ const Comment = ({star,handlerValoration}) => {
 
   useEffect( () => {
     storedToken && (
-       axios.get(`https://pf-back-production-b670.up.railway.app/user/${userId}`)
+       axios.get(`/user/${userId}`)
       .then((response) => {
         setPerfil(response.data)
       })
       )
 
-      axios.get(`https://pf-back-production-b670.up.railway.app/shops/${userId}`)
+      axios.get(`/shops/${userId}`)
       .then((response) => {
         if(response.data){
           let filter = response.data?.filter((element)=>element.userProduct.id===parseInt(id));
@@ -76,7 +76,7 @@ const Comment = ({star,handlerValoration}) => {
         if (
           review.comment && review.qualification
         ) {
-          await axios.post(`https://pf-back-production-b670.up.railway.app/review/${userId}/${id}`, review)
+          await axios.post(`/review/${userId}/${id}`, review)
           .then((response) => {
             if(response){
               console.log(response);

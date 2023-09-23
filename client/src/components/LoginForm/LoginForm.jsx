@@ -35,7 +35,7 @@ const LoginForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://pf-back-production-b670.up.railway.app/user/login", { email, password })
+      .post("/user/login", { email, password })
       .then((response) => {
         const token = response.data.token;
         const userId = response.data.id;
@@ -65,7 +65,7 @@ const LoginForm = () => {
     };
 
     try {
-      const res = await axios.post('https://pf-back-production-b670.up.railway.app/user/create', user);
+      const res = await axios.post('/user/create', user);
       if (res.data.success) {
         const id = res.data.id;
         localStorage.setItem('userId', id);
@@ -74,7 +74,7 @@ const LoginForm = () => {
     } catch (error) {
       console.log('Error al crear el usuario:', error);
     }
-    await axios.post("https://pf-back-production-b670.up.railway.app/user/create", user)
+    await axios.post("/user/create", user)
       .then((res) => {
         if (res) {
           const id = res.data.id

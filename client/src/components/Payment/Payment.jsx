@@ -33,7 +33,7 @@ const CheckOutForm = ({ total }) => {
       const { id } = paymentMethod;
 
       try {
-        const { data } = await axios.post('https://pf-back-production-b670.up.railway.app/api/checkout', {
+        const { data } = await axios.post('/api/checkout', {
           id,
           amount: parseInt(total) * 100, // Convertir el monto total a centavos
         });
