@@ -25,7 +25,7 @@ import MisCompras from './Views/MisCompras/MisCompras';
 import MisDomicilios from './Views/MisDomicilios/MisDomicilios';
 import axios from "axios";
 
-axios.defaults.BaseURL = "https://pf-ohanapasteleria.onrender.com";
+axios.defaults.BaseURL = "https://pf-ohanapasteleria.onrender.com/";
 
 function App() {
 
