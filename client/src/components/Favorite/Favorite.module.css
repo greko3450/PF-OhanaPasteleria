@@ -1,0 +1,71 @@
+.container{
+    width: 320px;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.imageCont{
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: auto;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.description{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    padding: 0 20px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+.cardCont:hover .description{
+    opacity: 100%;
+    transition: 200ms ease-in-out;
+
+}
+.cardCont:hover .image{
+    filter: brightness(40%);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    padding: 5px;
+    
+}
+
+.price{
+    background-color: pink;
+    padding: 5px;
+}
+
+.name{
+    margin:0 .5rem;
+}
+
+/********* favorites *********/
+.fav{
+    background: none;
+    border: none;
+    position: absolute;
+    bottom: 45px;
+    left: 5px;
+}
+.favIcon{
+    font-size: 30px;
+    color: #FF3040;
+}
+.favIconWhite{
+    font-size: 30px;
+    color: rgb(49, 49, 49);
+}

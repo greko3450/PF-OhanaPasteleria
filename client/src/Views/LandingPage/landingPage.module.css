@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f097ba;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: -6rem;
+  margin-left: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px #9e446e;
+}
+.mainSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  margin-top: -6rem;
+  margin-left: 50rem;
+}
+
+.button {
+  margin-left: 1rem;
+  background-color: #9e446e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #d47fa9;
+}
+
+.contentBox {
+  display: flex;
+  align-items: center;
+  background-color: #eea0de;
+  border: 2px solid #f8a7cd;
+  padding: 1rem;
+}
+
+.divider {
+  width: 2px;
+  height: 80%;
+  background-color: #9e446e;
+  margin: 0 2rem;
+}
+
+.imageSection {
+  flex: 1;
+  padding: 2rem;
+  border-right: 3px solid #9e446e;
+}
+
+.imageSection img {
+  max-width: 100%;
+  height: auto;
+}
+
+.descriptionSection {
+  flex: 1;
+  padding: 1rem;
+}
+
+.descriptionSection p {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 2px 2px 4px #9e446e;
+}
+
+.productsButton {
+  margin-top: 1rem;
+  background-color: #9e446e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.productsButton:hover {
+  background-color: #d47fa9;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: #9e446e;
+  cursor: pointer;
+}
+
+.contactInfo {
+  margin: 0;
+}
+
+.logo {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+  margin-right: 2px; /* Espacio entre el logo y el título */
+  margin-top: -105px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+}
