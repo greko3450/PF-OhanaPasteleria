@@ -87,7 +87,7 @@ console.log(!!storedToken);
 
   useEffect(() => {
     const searchFav = async () => {
-      await axios.get(`/favoritos/user/${userId}/products`).then((response) => {
+      await axios.get(`https://pf-ohanapasteleria.onrender.com/favoritos/user/${userId}/products`).then((response) => {
         response.data.map((fav) => {
           if (fav.id === parseInt(id)) {
             setisFav(true);
@@ -102,10 +102,10 @@ console.log(!!storedToken);
   }, []);
 
   const addFavorite = async () => {
-    await axios.post(`/favoritos/user/${userId}/product/${id}`);
+    await axios.post(`https://pf-ohanapasteleria.onrender.com/favoritos/user/${userId}/product/${id}`);
   };
   const deleteFavorite = async () => {
-      await axios.delete(`/favoritos/user/${userId}/product/${id}`);
+      await axios.delete(`https://pf-ohanapasteleria.onrender.com/favoritos/user/${userId}/product/${id}`);
       if (window.location.pathname === "/favoritos") {
         window.location.replace(window.location.href);
       }
@@ -168,7 +168,7 @@ console.log(!!storedToken);
     }).then(async (result) => {
       if (result.isConfirmed) {
         await axios
-          .delete(`/products/${myProduct.id}`)
+          .delete(`https://pf-ohanapasteleria.onrender.com/products/${myProduct.id}`)
           .then(
             navigate("/Products"),
             setTimeout(() => {

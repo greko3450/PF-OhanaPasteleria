@@ -48,7 +48,7 @@ const MisDatos = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `/user/modifyUser/${id}`;
+    const url = `https://pf-ohanapasteleria.onrender.com/user/modifyUser/${id}`;
     const updatedPerfil = { ...perfil, name, lastName, email, contact };
     await axios.put(url, updatedPerfil);
     setIsModified(false);

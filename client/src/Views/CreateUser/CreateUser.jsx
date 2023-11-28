@@ -50,7 +50,7 @@ const CreateUser = () => {
       !errors.password &&
       !errors.confirmpassword
     ) {
-      await axios.post("/user/create", form)
+      await axios.post("https://pf-ohanapasteleria.onrender.com/user/create", form)
       .then((response) => {
         if (response) {
           Navigate("/login");

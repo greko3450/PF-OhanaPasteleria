@@ -35,7 +35,7 @@ const LoginForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     await axios
-      .post("/user/login", { email, password })
+      .post("https://pf-ohanapasteleria.onrender.com/user/login", { email, password })
       .then((response) => {
         const token = response.data.token;
         const userId = response.data.id;
@@ -65,7 +65,7 @@ const LoginForm = () => {
     };
 
     try {
-      const res = await axios.post('/user/create', user);
+      const res = await axios.post('https://pf-ohanapasteleria.onrender.com/user/create', user);
       if (res.data.success) {
         const id = res.data.id;
         localStorage.setItem('userId', id);
@@ -74,7 +74,7 @@ const LoginForm = () => {
     } catch (error) {
       console.log('Error al crear el usuario:', error);
     }
-    await axios.post("/user/create", user)
+    await axios.post("https://pf-ohanapasteleria.onrender.com/user/create", user)
       .then((res) => {
         if (res) {
           const id = res.data.id

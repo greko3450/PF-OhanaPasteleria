@@ -33,7 +33,7 @@ const CheckOutForm = ({ total }) => {
       const { id } = paymentMethod;
 
       try {
-        const { data } = await axios.post('/api/checkout', {
+        const { data } = await axios.post('https://pf-ohanapasteleria.onrender.com/api/checkout', {
           id,
           amount: parseInt(total) * 100, // Convertir el monto total a centavos
         });

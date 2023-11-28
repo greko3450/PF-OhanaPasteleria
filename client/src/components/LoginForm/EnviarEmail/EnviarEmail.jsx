@@ -18,7 +18,7 @@ const EnviarEmail = () => {
   const handleSubmit = async (e) => {
    try {
      e.preventDefault();
-     await axios.post('/user/enviarMail',  email ).then((response) => { 
+     await axios.post('https://pf-ohanapasteleria.onrender.com/user/enviarMail',  email ).then((response) => { 
       const mensaje = response.data.message 
       Swal.fire({
        title: mensaje,

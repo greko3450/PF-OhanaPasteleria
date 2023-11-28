@@ -27,7 +27,7 @@ const Review = ({datasXProduc,star}) =>{
     const fetchData = async () => {
       if (storedToken && registeredId) {
           await axios
-            .get(`/user/${userId}`)
+            .get(`https://pf-ohanapasteleria.onrender.com/user/${userId}`)
               .then((response) => {
                 if (response) {
                     setPerfil(response.data);
@@ -53,7 +53,7 @@ const Review = ({datasXProduc,star}) =>{
             preConfirm: (login) => {
             if(star){
                 const reviewEdit = {"comment":login,"qualification":star};
-                axios.put(`/review/${registeredId}/${id}`,reviewEdit)
+                axios.put(`https://pf-ohanapasteleria.onrender.com/review/${registeredId}/${id}`,reviewEdit)
                 Swal.fire(
                     'Good job!',
                     'Gracias por su nueva reseña',
@@ -83,7 +83,7 @@ const Review = ({datasXProduc,star}) =>{
     
 
     const handlerDelete = async() =>{
-        await axios.delete(`/review/${registeredId}/${id}`, )
+        await axios.delete(`https://pf-ohanapasteleria.onrender.com/review/${registeredId}/${id}`, )
         .then((response) => {
             if(response){
             console.log(response);

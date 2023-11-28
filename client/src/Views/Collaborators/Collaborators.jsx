@@ -49,7 +49,7 @@ const collaborators = [
   },
   {
     name: 'Johann suasnabar',
-    linkedin: 'https://www.linkedin.com/in/greko3450/',
+    linkedin: 'https://www.linkedin.com/in/carlos-aaron-benites-acevedo-8925b5263/',
     age: 25,
     image: Ramdon
   },

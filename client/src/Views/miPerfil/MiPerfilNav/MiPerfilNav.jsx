@@ -49,7 +49,7 @@ const MiPerfilNav = () => {
 
   const handleChangeImage = (event) => {
     const file = event.target.files[0];
-    const url = `/user/modifyUser/${id}`;
+    const url = `https://pf-ohanapasteleria.onrender.com/user/modifyUser/${id}`;
     const reader = new FileReader();
     if (!file) {
       return;

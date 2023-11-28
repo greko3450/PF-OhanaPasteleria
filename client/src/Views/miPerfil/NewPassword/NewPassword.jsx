@@ -68,7 +68,7 @@ const NewPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`/user/modifyPassword/${id}`, password)
+            await axios.put(`https://pf-ohanapasteleria.onrender.com/user/modifyPassword/${id}`, password)
                 
                 Swal.fire({
                     title: "Contraseña actualizada correctamente",

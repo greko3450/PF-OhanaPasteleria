@@ -34,13 +34,13 @@ const Comment = ({star,handlerValoration}) => {
 
   useEffect( () => {
     storedToken && (
-       axios.get(`/user/${userId}`)
+       axios.get(`https://pf-ohanapasteleria.onrender.com/user/${userId}`)
       .then((response) => {
         setPerfil(response.data)
       })
       )
 
-      axios.get(`/shops/${userId}`)
+      axios.get(`https://pf-ohanapasteleria.onrender.com/shops/${userId}`)
       .then((response) => {
         if(response.data){
           let filter = response.data?.filter((element)=>element.userProduct.id===parseInt(id));
@@ -76,7 +76,7 @@ const Comment = ({star,handlerValoration}) => {
         if (
           review.comment && review.qualification
         ) {
-          await axios.post(`/review/${userId}/${id}`, review)
+          await axios.post(`https://pf-ohanapasteleria.onrender.com/review/${userId}/${id}`, review)
           .then((response) => {
             if(response){
               console.log(response);

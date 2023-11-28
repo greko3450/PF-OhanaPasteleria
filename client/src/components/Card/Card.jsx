@@ -12,7 +12,7 @@ function Card({ product, favorite, pritotal, cantidad }) {
   const userId = localStorage.getItem("userId");
   const token = localStorage.getItem("token");
   const { name, image, description, price, id } = product;
-  const URL = "/favoritos";
+  const URL = "https://pf-ohanapasteleria.onrender.com/favoritos";
   const [isFav, setisFav] = useState(false);
 
 

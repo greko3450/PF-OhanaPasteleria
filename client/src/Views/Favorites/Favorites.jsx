@@ -21,7 +21,7 @@ const Favorites = () => {
 
   const getFav = async () => {
     await axios
-      .get(`/favoritos/user/${userId}/products`)
+      .get(`https://pf-ohanapasteleria.onrender.com/favoritos/user/${userId}/products`)
       .then((response) => {
         setFav(response.data);
       });

@@ -25,7 +25,7 @@ const ChatBotOhana = () => {
   useEffect(() => {
     const imagenesBdd = async () => {
       try {
-        const response = await axios.get('/products/imagen/todas');
+        const response = await axios.get('https://pf-ohanapasteleria.onrender.com/products/imagen/todas');
         const imag = response.data.map(image => image);
         setImages(imag);
       } catch (error) {

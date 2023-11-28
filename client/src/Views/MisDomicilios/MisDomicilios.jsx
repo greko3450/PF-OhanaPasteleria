@@ -55,7 +55,7 @@ const MisDomicilios = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         await axios.delete(
-          `/Address/remove/${id}/${idAddress}`
+          `https://pf-ohanapasteleria.onrender.com/Address/remove/${id}/${idAddress}`
         );
         window.location.reload(true);
       }
